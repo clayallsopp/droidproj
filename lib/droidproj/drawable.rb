@@ -92,8 +92,8 @@ module DroidProj
       #
       # Returns the String representation
       def xml_string
-        str = %Q{
-<?xml version="1.0" encoding="utf-8"?>
+        str =
+%Q{<?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
 }
 

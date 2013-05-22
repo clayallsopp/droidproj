@@ -54,8 +54,6 @@ describe DroidProj::Android::Resources do
       write_op = DroidProj::Android::Resources::WriteOp.new
       write_op.at = "my_image.xml"
       write_op.content = drawable.xml_string
-      puts "CONTENT\n"
-      puts write_op.content
 
       hdpi_op = DroidProj::Android::Resources::MoveOp.new
       hdpi_op.from = 'some_file@hdpi.png'

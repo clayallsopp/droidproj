@@ -24,8 +24,8 @@ describe DroidProj::Android::Drawable do
     it "should produce the correct XML with basic options" do
       @drawable.hdpi "some_file.png", state_enabled: true
 
-      @drawable.xml_string.should == %Q{
-<?xml version="1.0" encoding="utf-8"?>
+      @drawable.xml_string.should ==
+%Q{<?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:state_enabled="true" android:drawable="@drawable/drawable_name_enabled_true" />
     <item android:drawable="@drawable/drawable_name" />
@@ -37,8 +37,8 @@ describe DroidProj::Android::Drawable do
       @drawable.hdpi "some_file.png", state_enabled: true
       @drawable.ldpi "some_file@ldpi.png", state_enabled: true
 
-      @drawable.xml_string.should == %Q{
-<?xml version="1.0" encoding="utf-8"?>
+      @drawable.xml_string.should ==
+%Q{<?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:state_enabled="true" android:drawable="@drawable/drawable_name_enabled_true" />
     <item android:drawable="@drawable/drawable_name" />
