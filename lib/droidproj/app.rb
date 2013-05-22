@@ -39,6 +39,8 @@ module DroidProj
       # Public: Creates the necessary filesystem considering all options
       #
       def create_filesystem!
+        return if !self.res
+
         res_filesystem = self.res.filesystem_hash
 
         DroidProj::Logger.log "Creating #{res_path}..."
