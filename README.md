@@ -27,14 +27,14 @@ This will (non-destructively) create the following directory structure in your A
 |---- drawable
 |------ back_icon.xml
 |---- drawable-ldpi
-|------ back_icon.png
-|------ back_icon_enabled_false.png
+|------ x_back_icon.png
+|------ x_back_icon_enabled_false.png
 |---- drawable-hdpi
-|------ back_icon.png
-|------ back_icon_enabled_false.png
+|------ x_back_icon.png
+|------ x_back_icon_enabled_false.png
 |---- drawable-mdpi
-|------ back_icon.png
-|------ back_icon_enabled_false.png
+|------ x_back_icon.png
+|------ x_back_icon_enabled_false.png
 ```
 
 ## Installation

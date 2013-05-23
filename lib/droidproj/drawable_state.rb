@@ -30,8 +30,7 @@ module DroidProj
       end
 
       def final_drawable_name
-        final_file_name = ""
-        final_file_name << self.drawable.name
+        final_file_name = DroidProj::Android::Drawable::FINAL_FILE_PREFIX + self.drawable.name
         self.state.each do |state, value|
           final_file_name << "_#{state}_#{value}"
         end

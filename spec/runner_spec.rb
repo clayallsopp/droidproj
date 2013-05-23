@@ -81,7 +81,7 @@ end}
       ['drawable', 'drawable-hdpi', 'drawable-ldpi', 'drawable-mdpi'].each do |folder|
         Dir.exists?(File.join(TEST_FOLDER, 'res', folder)).should == true
         if folder != 'drawable'
-          File.exists?(File.join(TEST_FOLDER, 'res', folder, 'back_icon.png')).should == true
+          File.exists?(File.join(TEST_FOLDER, 'res', folder, "#{DroidProj::Android::Drawable::FINAL_FILE_PREFIX}back_icon.png")).should == true
         else
           File.exists?(File.join(TEST_FOLDER, 'res', folder, 'back_icon.xml')).should == true
         end

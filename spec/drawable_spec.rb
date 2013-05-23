@@ -27,8 +27,8 @@ describe DroidProj::Android::Drawable do
       @drawable.xml_string.should ==
 %Q{<?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_enabled="true" android:drawable="@drawable/drawable_name_enabled_true" />
-    <item android:drawable="@drawable/drawable_name" />
+    <item android:state_enabled="true" android:drawable="@drawable/#{DroidProj::Android::Drawable::FINAL_FILE_PREFIX}drawable_name_enabled_true" />
+    <item android:drawable="@drawable/#{DroidProj::Android::Drawable::FINAL_FILE_PREFIX}drawable_name" />
 </selector>}
     end
 
@@ -40,8 +40,8 @@ describe DroidProj::Android::Drawable do
       @drawable.xml_string.should ==
 %Q{<?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_enabled="true" android:drawable="@drawable/drawable_name_enabled_true" />
-    <item android:drawable="@drawable/drawable_name" />
+    <item android:state_enabled="true" android:drawable="@drawable/#{DroidProj::Android::Drawable::FINAL_FILE_PREFIX}drawable_name_enabled_true" />
+    <item android:drawable="@drawable/#{DroidProj::Android::Drawable::FINAL_FILE_PREFIX}drawable_name" />
 </selector>}
     end
   end

@@ -1,6 +1,7 @@
 module DroidProj
   module Android
     class Drawable
+      FINAL_FILE_PREFIX = "x_"
       # Hash of STATE_HASH =>
       attr_accessor :states
       # The final name for this drawable, used in your code
@@ -107,7 +108,7 @@ module DroidProj
           end
         end
 
-        default_drawable = "<item android:drawable=\"@drawable/#{self.name}\" />\n"
+        default_drawable = "<item android:drawable=\"@drawable/#{FINAL_FILE_PREFIX}#{self.name}\" />\n"
         if !str.include?(default_drawable)
           str <<
 %Q{    #{default_drawable}}

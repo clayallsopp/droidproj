@@ -57,15 +57,15 @@ describe DroidProj::Android::Resources do
 
       hdpi_op = DroidProj::Android::Resources::MoveOp.new
       hdpi_op.from = 'some_file@hdpi.png'
-      hdpi_op.to = 'my_image.png'
+      hdpi_op.to = "#{DroidProj::Android::Drawable::FINAL_FILE_PREFIX}my_image.png"
 
       hdpi_dis_op = DroidProj::Android::Resources::MoveOp.new
       hdpi_dis_op.from = 'some_file_disabled@hdpi.png'
-      hdpi_dis_op.to = 'my_image_enabled_false.png'
+      hdpi_dis_op.to = "#{DroidProj::Android::Drawable::FINAL_FILE_PREFIX}my_image_enabled_false.png"
 
       ldpi_op = DroidProj::Android::Resources::MoveOp.new
       ldpi_op.from = 'some_file@ldpi.png'
-      ldpi_op.to = 'my_image.png'
+      ldpi_op.to = "#{DroidProj::Android::Drawable::FINAL_FILE_PREFIX}my_image.png"
 
       filesystem_hash = @res.filesystem_hash
 
