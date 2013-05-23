@@ -102,6 +102,36 @@ res do
 end
 ```
 
+## Why?
+
+You may think this seems like a glorified `cp` wrapper, right? Actually, DroidProj's benefits are that:
+
+- Your original resource file names are not explicitly tied to how they're used in code. Often times designers will deliver assets with their own naming or folder scheme, which doesn't exactly jive with what Android expects them to be. DroidProj will name everything to make sense and just work.
+
+- You can execute normal Ruby to automate and/or manipulate your Android projects. This is taken from [Propeller](http://usepropeller.com)'s own `Droidfile`:
+
+```ruby
+res do
+  drawable 'back_icon' do
+    # DRY up the images
+    ["hdpi", "xhdpi", "mdpi"].each do |size|
+      self.send(size, "./images/back_white@#{size}.png")
+    end
+
+    # Automatically create disabled-state images
+    state(enabled: false) do
+      ["hdpi", "xhdpi", "mdpi"].each do |size|
+        original = "./images/back_white@#{size}.png"
+        new_path = original.gsub("@#{size}", "_disabled@#{size}")
+        transparency = "convert " << original << ' -channel A -fx "A*0.5"  ' << new_path
+        system(transparency)
+        self.send(size, new_path)
+      end
+    end
+  end
+end
+```
+
 ## Contact
 
 Clay Allsopp ([http://clayallsopp.com](http://clayallsopp.com))
